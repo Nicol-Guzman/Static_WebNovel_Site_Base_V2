@@ -1,0 +1,341 @@
+/* =========================================
+   GENERAL
+============================================ */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 12% 10%, rgba(126, 91, 157, 0.30), transparent 32%),
+        radial-gradient(circle at 88% 18%, rgba(174, 99, 133, 0.24), transparent 34%),
+        radial-gradient(circle at 78% 88%, rgba(93, 77, 145, 0.22), transparent 34%),
+        linear-gradient(135deg, #12111d, #181522 50%, #15121d);
+    color: #eee9f0;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* =========================================
+   BOOK
+============================================ */
+.book-container {
+    width: min(950px, 94vw);
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem 6rem;
+}
+
+/* =========================================
+   HEADER
+============================================ */
+.book-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+}
+
+.book-header h1 {
+    font-size: 2.6rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: #f5eef5;
+    margin-bottom: 0.5rem;
+    text-shadow:
+        0 2px 18px rgba(0, 0, 0, 0.45),
+        0 0 28px rgba(145, 103, 170, 0.12);
+}
+
+.book-header h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: italic;
+    color: #c9aec4;
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+
+/* =========================================
+   CHAPTER NAVIGATION
+============================================ */
+.chapter-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* =========================================
+   PREVIOUS / NEXT BUTTONS
+============================================ */
+.chapter-navigation button {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #665477;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #282037, #211c2e);
+    color: #d8b8cb;
+    font-size: 1.15rem;
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.chapter-navigation button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: #b890b3;
+    background: linear-gradient(145deg, #38294a, #30243c);
+    color: #edc9dc;
+    box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(190, 128, 171, 0.14);
+}
+
+.chapter-navigation button:disabled {
+    opacity: 0.3;
+}
+
+/* =========================================
+   CHAPTER SELECTOR
+============================================ */
+#chapter-selector {
+    flex: 1;
+    max-width: 620px;
+    height: 44px;
+    margin: 0 0.7rem;
+    padding: 0 1rem;
+    border: 1px solid #665477;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #272036, #211d2c);
+    color: #eee8f0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9rem;
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#chapter-selector:hover {
+    border-color: #9a7db0;
+}
+
+#chapter-selector:focus {
+    border-color: #b890b3;
+    box-shadow:
+        0 0 0 3px rgba(184, 144, 179, 0.15),
+        0 5px 20px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+/* =========================================
+   CHAPTER CONTENT
+============================================ */
+.chapter-content {
+    width: 100%;
+    background: linear-gradient(145deg, rgba(255, 252, 246, 0.99), rgba(248, 242, 234, 0.99));
+    color: #302c32;
+    padding: 5rem 5.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.40),
+        0 5px 20px rgba(0, 0, 0, 0.20),
+        0 0 45px rgba(123, 88, 151, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    line-height: 1.9;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+/* =========================================
+   READING SURFACE ACCENT
+============================================ */
+.chapter-content::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 16px;
+    pointer-events: none;
+    box-shadow:
+        0 0 45px rgba(130, 91, 159, 0.08),
+        0 0 80px rgba(176, 105, 139, 0.05);
+}
+
+/* =========================================
+   CHAPTER TITLE
+============================================ */
+.chapter-content h1,
+.chapter-content h2,
+.chapter-content h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: #51405b;
+}
+
+/* =========================================
+   CHAPTER TITLE DECORATION
+============================================ */
+.chapter-content h1::after,
+.chapter-content h2::after,
+.chapter-content h3::after {
+    content: "✦✦✦";
+    display: block;
+    margin-top: 1.5rem;
+    color: #b08a58;
+    font-size: 1.0rem;
+    opacity: 0.85;
+}
+
+/* =========================================
+   PARAGRAPHS
+============================================ */
+.chapter-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+
+/* =========================================
+   EMPHASIS
+============================================ */
+.chapter-content em {
+    font-style: italic;
+    color: #72556e;
+}
+
+.chapter-content strong {
+    font-weight: bold;
+    color: #45374b;
+}
+
+/* =========================================
+   LINKS
+============================================ */
+.chapter-content a {
+    color: #795b91;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.chapter-content a:hover {
+    color: #a06083;
+}
+
+/* =========================================
+   BACK TO TOP
+============================================ */
+.back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 1000;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #b890b3;
+    border-radius: 50px;
+    background: #f5eef5;
+    color: #51405b;
+    font-size: 1.15rem;
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.28),
+        0 0 18px rgba(245, 238, 245, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+    border-color: #a06083;
+    background: #eadce7;
+    color: #72556e;
+    box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(190, 128, 171, 0.18);
+}
+
+/* =========================================
+   MOBILE
+============================================ */
+@media (max-width: 768px) {
+    .book-container {
+        width: 100%;
+        padding: 2rem 1rem 3rem;
+    }
+
+    .book-header {
+        margin-bottom: 2rem;
+    }
+
+    .book-header h1 {
+        font-size: 1.9rem;
+    }
+
+    .book-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .chapter-navigation {
+        flex-wrap: nowrap;
+    }
+
+    .chapter-content {
+        padding: 3rem 1.6rem;
+        font-size: 1rem;
+        line-height: 1.8;
+        border-radius: 12px;
+    }
+
+    #chapter-selector {
+        min-width: 0;
+        margin: 0 0.4rem;
+    }
+
+    .chapter-navigation button {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .back-to-top {
+        right: 1rem;
+        bottom: 1rem;
+        width: 35px;
+        height: 35px;
+    }
+}

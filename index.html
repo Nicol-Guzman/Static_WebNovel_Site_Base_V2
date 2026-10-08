@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Novel Semi-Dynamic Website</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+    <main class="container-fluid min-vh-100 d-flex flex-column">
+
+        <section id="book" class="book-container mx-auto">
+
+            <!-- Book Header -->
+            <header class="book-header">
+
+                <h1 id="book-title">
+                    Novel Title Here
+                </h1>
+
+                <h3 id="book-author">
+                    Author Name Here
+                </h3>
+
+            </header>
+
+            <!-- Chapter Navigation -->
+            <nav
+                class="chapter-navigation"
+                aria-label="Chapter navigation"
+            >
+
+                <!-- Previous Chapter -->
+                <button 
+                    id="previous-chapter"
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    aria-label="Previous chapter"
+                >
+                <i class="bi bi-caret-left-fill"></i>
+                </button>
+
+                <!-- Chapter Selector -->
+                <select
+                    id="chapter-selector"
+                    class="form-select"
+                    aria-label="Select chapter"
+                >
+                <!-- JavaScript populates chapters -->
+                </select>
+
+                <!-- Next Chapter -->
+                <button
+                    id="next-chapter"
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    aria-label="Next chapter"
+                >
+                <i class="bi bi-caret-right-fill"></i>
+                </button>
+
+            </nav>
+
+            <!-- Chapter Content -->
+            <article id="chapter-content" class="chapter-content">
+            <!-- JavaScript loads chapter content here -->
+            </article>
+
+            <footer class="book-footer text-center mt-5">
+                <p>2026 © Fable Fiction. All rights reserved.</p>
+            </footer>
+
+        </section>
+
+    </main>
+
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top"><i class="bi bi-caret-up-fill"></i></button>
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Mammoth DOCX → HTML -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="scripts/scripts.js"></script>
+
+</body>
+
+</html>
