@@ -127,6 +127,11 @@ body {
         box-shadow 0.2s ease;
 }
 
+#chapter-selector option {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 #chapter-selector:hover {
     border-color: #9a7db0;
 }
